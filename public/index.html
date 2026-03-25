@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksa Terminal</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+</head>
+<body>
+    <div class="background-decor">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+    
+    <div class="terminal-wrapper">
+        <header class="terminal-header">
+            <div class="header-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">ruby@eksa-server: ~</div>
+        </header>
+        
+        <div class="terminal-body" id="terminal-body">
+            <div class="output-line welcome-message">
+                <span class="prompt">Welcome to Eksa Web Terminal v1.0.0</span>
+            </div>
+            <div class="output-line info-message">
+                <span class="prompt">Type 'help' for available commands.</span>
+            </div>
+            <div id="output-container"></div>
+            <div class="input-line">
+                <div id="prompt-top-container"></div>
+                <div class="input-wrapper">
+                    <span id="prompt-bottom-symbol" class="prompt-bottom">❯</span>
+                    <div class="real-input-container">
+                        <div id="mirrored-input" class="mirrored-layer"></div>
+                        <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="editor-modal" class="editor-modal hidden">
+        <div class="editor-header">
+            <span id="editor-title">Nano Web Editor</span>
+            <div class="editor-controls">
+                <button id="editor-save" title="Save (Ctrl+S)">💾</button>
+                <button id="editor-close" title="Close (Esc)">✖</button>
+            </div>
+        </div>
+        <div id="editor-container"></div>
+        <div class="editor-footer">^O Save  ^X Exit</div>
+    </div>
+
+    <script src="/js/terminal.js"></script>
+</body>
+</html>
